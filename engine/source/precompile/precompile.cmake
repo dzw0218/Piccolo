@@ -28,9 +28,11 @@ elseif(CMAKE_HOST_APPLE)
     )
 
     set(PRECOMPILE_PRE_EXE)
-	set(PRECOMPILE_PARSER ${PRECOMPILE_TOOLS_PATH}/PiccoloParser)
-    set(sys_include "${osx_sdk_platform_path_test}/../../Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1") 
+    set(PRECOMPILE_PARSER ${PRECOMPILE_TOOLS_PATH}/PiccoloParser)
+    set(sys_include "${osx_sdk_platform_path_test}/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1") 
 endif()
+
+message(STATUS ${sys_include})
 
 set (PARSER_INPUT ${CMAKE_BINARY_DIR}/parser_header.h)
 ### BUILDING ====================================================================================
