@@ -26,6 +26,6 @@ else
     exit 1
 fi
 
-cmake -S . -B build -G "Xcode"
+cmake -S . -B build
 
 cmake --build build --config "${CONFIG}"

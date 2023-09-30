@@ -22,14 +22,14 @@ elseif(CMAKE_HOST_APPLE)
     endif()
 
     execute_process(
-      COMMAND ${XCRUN_EXECUTABLE} --sdk macosx --show-sdk-platform-path
+      COMMAND ${XCRUN_EXECUTABLE} --sdk macosx --show-sdk-path
       OUTPUT_VARIABLE osx_sdk_platform_path_test
       OUTPUT_STRIP_TRAILING_WHITESPACE
     )
 
     set(PRECOMPILE_PRE_EXE)
     set(PRECOMPILE_PARSER ${PRECOMPILE_TOOLS_PATH}/PiccoloParser)
-    set(sys_include "${osx_sdk_platform_path_test}/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1") 
+    set(sys_include "${osx_sdk_platform_path_test}/usr/include/c++/v1") 
 endif()
 
 message(STATUS ${sys_include})
